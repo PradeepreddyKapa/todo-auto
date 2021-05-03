@@ -21,3 +21,6 @@ if [ "${USER_NAME}" != "root" ]; then
   exit 1
 fi
 
+export COMPONENT
+bash components/${COMPONENT}.sh
+
