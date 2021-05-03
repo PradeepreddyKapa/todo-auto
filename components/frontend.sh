@@ -7,7 +7,9 @@ OS_PREREQ
 Head "Installing Nginx and Npm"
 sudo apt install nginx -y &>>$LOG
 sudo apt install npm -y &>>$LOG
-sudo apt install nodejs -y &>>LOG
+sudo apt install nodejs -y &>>$LOG
+sudo apt install node-node-sass &>>$LOG
+
 stat $?
 
 Head "Downloading COMPONENT"
