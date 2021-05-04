@@ -1,22 +1,24 @@
 #!/bin/bash
 
 source components/common.sh
+
 OS_PREREQ
 
-Head "Installing Java and Maven"
-apt install openjdk-8-jdk -y &>>$LOG
-apt install maven -y &>>$LOG
-stat $?
+Head "Installing Dependencies"
+apt install openjdk-8-jdk -y &>>$LOG && apt install maven -y &>>$LOG
+Stat $?
 
+Head "Clone Repo"
 
-Head "Downloading the component"
-git clone https://github.com/PradeepreddyKapa/users.git &>>$LOG && cd users && mv systemd.service /etc/systemd/system/users.service  
-stat $?
+cd /home/ubuntu
+git clone https://github.com/PradeepreddyKapa/users.git &>>$LOG && mv Todo-users users && cd users
+Stat $?
 
-Head "Building the Code"
-cd /root/todo-auto/users
-mvn clean Package &>>$LOG
-stat $?
+Head "Building Packages"
+mvn clean package &>>$LOG 
+Stat $?
 
-Head "Starting the Service"
-systemctl daemon-reload &>>$LOG && systemctl start users && systemctl enable users &>>$LOG
+Head "Creating Service"
+
+mv systemd.service /etc/systemd/system/users.service && systemctl daemon-reload &>>$LOG && systemctl start users && systemctl enable users &>>$LOG
+Stat $?
