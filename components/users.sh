@@ -18,4 +18,4 @@ mvn clean Package &>>$LOG
 stat $?
 
 Head "Starting the Service"
-java -jar target/users-api-0.0.1.jar
+sudo java -jar target/users-api-0.0.1.jar
