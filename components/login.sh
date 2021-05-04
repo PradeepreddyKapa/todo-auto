@@ -7,7 +7,7 @@ Head "Installing Go"
 apt install golang -y &>>$LOG
 Stat $?
 
-Head "Cloning Repo"
+Head "Downloading Component"
 git clone https://github.com/PradeepreddyKapa/login.git &>>$LOG && cd login && mv systemd.service /etc/systemd/system/login.service
 Stat $?
 
