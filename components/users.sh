@@ -11,12 +11,10 @@ stat $?
 
 Head "Downloading the component"
 git clone https://github.com/PradeepreddyKapa/users.git &>>$LOG && cd users && mv systemd.service /etc/systemd/system/users.service  
-cd /src 
-rm -rf test 
+rm -rf src/test/*
 stat $?
 
 Head "Building the Code"
-cd ..
 mvn clean Package &>>$LOG
 stat $?
 
