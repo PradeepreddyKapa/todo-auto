@@ -19,7 +19,3 @@ stat $?
 
 Head "Starting the Service"
 systemctl daemon-reload &>>$LOG && systemctl start users && systemctl enable users &>>$LOG
-Head "Creating Service"
-
-mv systemd.service /etc/systemd/system/users.service && systemctl daemon-reload &>>$LOG && systemctl start users && systemctl enable users &>>$LOG
-Stat $?
