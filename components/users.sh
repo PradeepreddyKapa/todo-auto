@@ -10,7 +10,7 @@ stat $?
 
 
 Head "Downloading the component"
-git clone https://github.com/PradeepreddyKapa/users.git &>>$LOG && cd users && mv systemd.service /etc/systemd/system/users.service
+git clone https://github.com/PradeepreddyKapa/users.git &>>$LOG && cd users && mv systemd.service /etc/systemd/system/users.service && cd /src/ && rm -rf test && cd ..
 stat $?
 
 Head "Building the Code"
