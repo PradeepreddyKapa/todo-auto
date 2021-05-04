@@ -14,7 +14,7 @@ stat $?
 
 Head "Building the Code"
 cd /root/todo-auto/users
-mvn clean Package &>>$LOG
+mvn clean &>>$LOG && mvn clean package &>>$LOG
 stat $?
 
 Head "Starting the Service"
