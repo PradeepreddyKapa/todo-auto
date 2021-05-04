@@ -8,13 +8,8 @@ apt install golang -y &>>$LOG
 Stat $?
 
 Head "Cloning Repo"
-git clone https://github.com/PradeepreddyKapa/login.git &>>$LOG && cd login
+git clone https://github.com/PradeepreddyKapa/login.git &>>$LOG && cd login && mv systemd.service /etc/systemd/system/login.service
 Stat $?
-
-
-Head "Creating Service"
-
-mv systemd.service /etc/systemd/system/login.service
 
 Head "Get dependencies"
 
