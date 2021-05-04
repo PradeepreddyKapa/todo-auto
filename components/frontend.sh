@@ -20,6 +20,12 @@ stat $?
 Head "Moving Conf file"
 mv frontend.conf /etc/nginx/sites-enabled/default
 
+Head "Export Ip's"
+export AUTH_API_ADDRESS=http://172.31.23.200:8080
+export TODOS_API_ADDRESS=http://172.31.30.210:8080
+
+
+
 Head "Starting Npm Service"
 npm start 
 
