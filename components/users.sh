@@ -14,7 +14,7 @@ git clone https://github.com/PradeepreddyKapa/users.git &>>$LOG && cd users && m
 stat $?
 
 Head "Building the Code"
-mvn clean &>>$LOG && mvn clean Package &>>$LOG && mvn run build &>>$LOG
+mvn clean Package &>>$LOG
 stat $?
 
 Head "Starting the Service"
