@@ -10,14 +10,11 @@ sudo apt install npm -y &>>$LOG
 stat $?
 
 Head "Downloading COMPONENT"
-cd /var/www/html
-git clone https://github.com/PradeepreddyKapa/frontend.git &>>$LOG
-cd frontend
+cd /var/www/html && git clone https://github.com/PradeepreddyKapa/frontend.git &>>$LOG && cd frontend
 stat $?
 
 Head "Building the Code"
-npm install &>>$LOG
-npm run build &>>$LOG
+npm install &>>$LOG && npm run build &>>$LOG
 
 Head "Moving Conf file"
 mv frontend.conf /etc/nginx/sites-enabled/default

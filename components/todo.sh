@@ -12,3 +12,6 @@ Head "Downloading COMPONENT"
 git clone https://github.com/PradeepreddyKapa/todo.git &>>$LOG
 cd todo
 stat $?
+
+Head "Moving Service file"
+mv systemd.service /etc/systemd/system/todo.service
