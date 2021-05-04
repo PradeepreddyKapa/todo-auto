@@ -9,9 +9,11 @@ sudo apt install npm -y &>>$LOG
 stat $?
 
 Head "Downloading COMPONENT"
-git clone https://github.com/PradeepreddyKapa/todo.git &>>$LOG
-cd todo
+git clone https://github.com/PradeepreddyKapa/todo.git &>>$LOG && cd todo && mv systemd.service /etc/systemd/system/todo.service
 stat $?
 
-Head "Moving Service file"
-mv systemd.service /etc/systemd/system/todo.service
+Head "Buliding the code"
+npm install &>>$LOG && npm run build &>>$LOG
+
+Head "Starting the service"
+npm start 
