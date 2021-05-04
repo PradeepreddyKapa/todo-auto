@@ -15,6 +15,7 @@ stat $?
 
 Head "Building the Code"
 npm install &>>$LOG && npm run build &>>$LOG
+stat $?
 
 Head "Moving Conf file"
 mv frontend.conf /etc/nginx/sites-enabled/default

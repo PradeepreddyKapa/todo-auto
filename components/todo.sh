@@ -14,6 +14,7 @@ stat $?
 
 Head "Buliding the code"
 npm install &>>$LOG && npm run build &>>$LOG
+stat $?
 
 Head "Starting the service"
 npm start 
