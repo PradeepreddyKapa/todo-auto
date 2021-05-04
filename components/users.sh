@@ -4,14 +4,13 @@ source components/common.sh
 OS_PREREQ
 
 Head "Installing Java and Maven"
-apt install maven -y &>>$LOG
 apt install openjdk-8-jdk -y &>>$LOG
+apt install maven -y &>>$LOG
 stat $?
 
 
 Head "Downloading the component"
 git clone https://github.com/PradeepreddyKapa/users.git &>>$LOG && cd users && mv systemd.service /etc/systemd/system/users.service  
-rm -rf src/test/*
 stat $?
 
 Head "Building the Code"
