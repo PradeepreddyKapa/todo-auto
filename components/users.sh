@@ -14,8 +14,9 @@ git clone https://github.com/PradeepreddyKapa/users.git &>>$LOG && cd users && m
 stat $?
 
 Head "Building the Code"
+cd /root/todo-auto/users
 mvn clean Package &>>$LOG
 stat $?
 
 Head "Starting the Service"
-sudo java -jar target/users-api-0.0.1.jar
+systemctl daemon-reload &>>$LOG && systemctl start users && systemctl enable users &>>$LOG
