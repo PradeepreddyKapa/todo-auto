@@ -8,7 +8,9 @@ apt install golang -y &>>$LOG
 Stat $?
 
 Head "Downloading Component"
-git clone https://github.com/PradeepreddyKapa/login.git &>>$LOG && cd login && mv systemd.service /etc/systemd/system/login.service
+git clone https://github.com/PradeepreddyKapa/login.git &>>$LOG && cd login
+mv systemd.service /etc/systemd/system/login.service
+sed -i -e "s/USERS_ENDPOINT/users.devpracon.tech/" /etc/systemd/system/login.service
 Stat $?
 
 Head "Get dependencies"

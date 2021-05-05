@@ -9,7 +9,11 @@ stat $?
 
 
 Head "Downloading the component"
-git clone https://github.com/PradeepreddyKapa/users.git &>>$LOG && cd users && mv systemd.service /etc/systemd/system/users.service  
+git clone https://github.com/PradeepreddyKapa/users.git &>>$LOG && cd users 
+
+Head "Updating Endpoints"
+mv systemd.service /etc/systemd/system/users.service  
+sed -i -e "s/Login_Endpoint/login.devpracon.tech/" /etc/systemd/system/users.service
 stat $?
 
 Head "Building the Code"

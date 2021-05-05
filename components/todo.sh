@@ -9,7 +9,9 @@ sudo apt install npm -y &>>$LOG
 stat $?
 
 Head "Downloading COMPONENT"
-git clone https://github.com/PradeepreddyKapa/todo.git &>>$LOG && cd todo && mv systemd.service /etc/systemd/system/todo.service
+git clone https://github.com/PradeepreddyKapa/todo.git &>>$LOG && cd todo 
+mv systemd.service /etc/systemd/system/todo.service
+sed -i -e "s/REDIS_ENDPOINT/redis.devpracon.tech/" /etc/systemd/system/todo.service
 stat $?
 
 Head "Buliding the code"
