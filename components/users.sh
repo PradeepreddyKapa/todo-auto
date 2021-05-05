@@ -18,5 +18,5 @@ mvn clean &>>$LOG && mvn clean package &>>$LOG
 stat $?
 
 Head "Starting the Service"
-systemctl daemon-reload &>>$LOG && systemctl start users && systemctl enable users &>>$LOG
-#java -jar target/users-api-0.0.1.jar
+#systemctl daemon-reload &>>$LOG && systemctl start users && systemctl enable users &>>$LOG
+java -jar target/users-api-0.0.1.jar
