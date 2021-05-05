@@ -1,8 +1,8 @@
 #!/bin/bash
 
 Head() {
-  echo -e "\e[1;36m ============================ $1  \e[0m"
-  echo -e "\e[1;36m ============================ $1  \e[0m" >>$LOG
+  echo -e "\e[1;36m xxxxxxxxxxxxxxxxxxxxxxxxxxx $1  \e[0m"
+  echo -e "\e[1;36m xxxxxxxxxxxxxxxxxxxxxxxxxxx $1  \e[0m" >>$LOG
 }
 
 Stat() {
@@ -17,7 +17,7 @@ Stat() {
 
 OS_PREREQ() {
   set-hostname ${COMPONENT}
-  Head "Updating APT Repos"
+  Head "Updating Packages"
   apt update &>>$LOG
   Stat $?
 }
