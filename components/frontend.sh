@@ -7,7 +7,6 @@ OS_PREREQ
 Head "Installing Nginx and Npm"
 sudo apt install nginx -y &>>$LOG
 sudo apt install npm -y &>>$LOG
-sudo apt install nodejs -y &>>$LOG
 
 stat $?
 
@@ -28,7 +27,7 @@ export TODOS_API_ADDRESS=http://172.31.30.210:8080
 stat $?
 
 Head "Starting Npm Service"
-#npm start 
-systemctl restart nginx &>>$LOG && systemctl start nginx &>>$LOG systemctl enable nginx &>>$LOG
+npm start 
+#systemctl restart nginx &>>$LOG && systemctl start nginx &>>$LOG systemctl enable nginx &>>$LOG
 
 
