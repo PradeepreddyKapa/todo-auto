@@ -21,7 +21,14 @@ stat $?
 Head "Moving Conf file"
 mv frontend.conf /etc/nginx/sites-enabled/default
 
+Head "Exporting Ip's"
+
+export AUTH_API_ADDRESS=http://172.31.23.200:8080
+export TODOS_API_ADDRESS=http://172.31.30.210:8080
+stat $?
 
 Head "Starting Npm Service"
-npm start 
+#npm start 
+systemctl restart nginx &>>$LOG && systemctl start nginx &>>$LOG systemctl enable nginx &>>$LOG
+
 
