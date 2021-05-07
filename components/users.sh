@@ -9,6 +9,7 @@ stat $?
 
 
 Head "Downloading the component"
+cd /root/
 git clone https://github.com/PradeepreddyKapa/users.git &>>$LOG && cd users 
 
 Head "Updating Endpoints"
@@ -17,7 +18,6 @@ sed -i -e "s/Login_Endpoint/login.devpracon.tech/" /etc/systemd/system/users.ser
 stat $?
 
 Head "Building the Code"
-cd /root/todo-auto/users
 mvn clean &>>$LOG && mvn clean package &>>$LOG
 stat $?
 
