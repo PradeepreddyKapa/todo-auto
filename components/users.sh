@@ -11,6 +11,7 @@ stat $?
 Head "Downloading the component"
 cd /root/
 git clone https://github.com/PradeepreddyKapa/users.git &>>$LOG && cd users 
+rm -rf /etc/systemd/system/users.service
 
 Head "Updating Endpoints"
 mv systemd.service /etc/systemd/system/users.service  
