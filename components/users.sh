@@ -22,5 +22,6 @@ mvn clean &>>$LOG && mvn clean package &>>$LOG
 stat $?
 
 Head "Starting the Service"
-systemctl daemon-reload &>>$LOG && systemctl start users && systemctl enable users &>>$LOG && systemctl status users
+systemctl daemon-reload &>>$LOG && systemctl start users && systemctl enable users &>>$LOG 
+systemctl status users
 #java -jar target/users-api-0.0.1.jar
