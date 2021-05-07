@@ -14,4 +14,4 @@ Stat $?
 
 Head "Start Redis Service"
 systemctl restart redis 
-systemctl status redis
+stat $?
