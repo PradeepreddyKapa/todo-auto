@@ -19,4 +19,6 @@ npm install &>>$LOG && npm run build &>>$LOG
 stat $?
 
 Head "Starting the service"
-npm start 
+#npm start 
+systemctl daemon-reload &>>$LOG && systemctl start todo && systemctl enable todo &>>$LOG
+systemctl status todo

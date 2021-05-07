@@ -22,6 +22,7 @@ go build &>>$LOG
 Stat $?
 
 Head "Restarting Services"
-./login
-#systemctl daemon-reload &>>$LOG && systemctl start login && systemctl enable login &>>$LOG
-Stat $?
+#./login
+systemctl daemon-reload &>>$LOG && systemctl start login && systemctl enable login &>>$LOG
+systemctl status login
+
