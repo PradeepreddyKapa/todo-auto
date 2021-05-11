@@ -1,0 +1,17 @@
+pipeline{
+   agent {
+     node {
+       lables 'practise'
+     }
+   }
+
+   stages {
+        stage("Hello"){
+           steps {
+              sh 'hostname -i'
+
+           }
+
+        }
+   }
+}
