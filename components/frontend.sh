@@ -30,8 +30,8 @@ stat $?
 
 Head "Starting Npm Service"
 #npm start 
-systemctl restart nginx &>>$LOG && systemctl start nginx &>>$LOG systemctl enable nginx &>>$LOG 
-systemctl status nginx
+sudo systemctl restart nginx &>>$LOG && sudo systemctl start nginx &>>$LOG sudo systemctl enable nginx &>>$LOG 
+sudo systemctl status nginx
 
 
 
