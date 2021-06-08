@@ -29,9 +29,9 @@ export TODOS_API_ADDRESS=http://todo.devpracon.tech:8080
 stat $?
 
 Head "Starting Npm Service"
-#npm start 
-sudo systemctl restart nginx &>>$LOG && sudo systemctl start nginx &>>$LOG sudo systemctl enable nginx &>>$LOG 
-sudo systemctl status nginx
+npm start 
+#sudo systemctl restart nginx &>>$LOG && sudo systemctl start nginx &>>$LOG sudo systemctl enable nginx &>>$LOG 
+#sudo systemctl status nginx
 
 
 
