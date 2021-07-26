@@ -5,7 +5,8 @@ OS_PREREQ
 
 Head "Installing Go"
 apt install golang -y &>>$LOG
-Stat $?
+stat $?
+
 
 Head "Downloading Component"
 cd /root/

@@ -11,7 +11,8 @@ stat $?
 Head "Downloading COMPONENT"
 cd /root/
 git clone https://github.com/PradeepreddyKapa/todo.git &>>$LOG && cd todo 
-rm -rf /etc/systemd/system/todo.service
+
+Head "Move Systemd file"
 mv systemd.service /etc/systemd/system/todo.service
 sed -i -e "s/REDIS_ENDPOINT/redis.devpracon.tech/" /etc/systemd/system/todo.service
 stat $?

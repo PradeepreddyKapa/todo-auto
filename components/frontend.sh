@@ -7,8 +7,8 @@ OS_PREREQ
 Head "Installing Nginx and Npm"
 sudo apt install nginx -y &>>$LOG
 sudo apt install npm -y &>>$LOG
-
 stat $?
+
 
 Head "Downloading COMPONENT"
 cd /var/www/html && git clone https://github.com/PradeepreddyKapa/frontend.git &>>$LOG && cd frontend
@@ -23,14 +23,9 @@ mv frontend.conf /etc/nginx/sites-enabled/default
 sed -i -e "s/LOGIN_ENDPOINT/login.devpracon.tech/" -e "s/TODO_ENDPOINT/todo.devpracon.tech/" /etc/nginx/sites-enabled/default
 stat $?
 
-Head "Exporting Ip's"
-export AUTH_API_ADDRESS=http://login.devpracon.tech:8080
-export TODOS_API_ADDRESS=http://todo.devpracon.tech:8080
-stat $?
-
 Head "Starting Npm Service"
-npm start 
-#sudo systemctl restart nginx &>>$LOG && sudo systemctl start nginx &>>$LOG sudo systemctl enable nginx &>>$LOG 
+npm start
+#sudo systemctl restart nginx &>>$LOG && sudo systemctl start nginx &>>$LOG sudo systemctl enable nginx &>>$LOG
 #sudo systemctl status nginx
 
 
