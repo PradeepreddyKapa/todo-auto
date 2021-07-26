@@ -14,6 +14,8 @@ git clone https://github.com/PradeepreddyKapa/todo.git &>>$LOG && cd todo
 
 Head "Move Systemd file"
 mv systemd.service /etc/systemd/system/todo.service
+
+Head "change DNS in service file"
 sed -i -e "s/REDIS_ENDPOINT/redis.devpracon.tech/" /etc/systemd/system/todo.service
 stat $?
 
