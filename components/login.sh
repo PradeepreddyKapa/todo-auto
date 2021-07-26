@@ -11,7 +11,7 @@ stat $?
 Head "Downloading Component"
 cd /root/
 git clone https://github.com/PradeepreddyKapa/login.git &>>$LOG && cd login
-rm -rf /etc/systemd/system/login.service
+#rm -rf /etc/systemd/system/login.service
 mv systemd.service /etc/systemd/system/login.service
 sed -i -e "s/USERS_ENDPOINT/users.devpracon.tech/" /etc/systemd/system/login.service
 Stat $?
