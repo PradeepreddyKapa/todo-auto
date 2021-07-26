@@ -4,7 +4,7 @@ source components/common.sh
 OS_PREREQ
 
 Head "Installing Go"
-apt install golang -y &>>$LOG
+sudo apt install golang -y &>>$LOG
 stat $?
 
 
