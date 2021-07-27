@@ -4,7 +4,7 @@ source components/common.sh
 OS_PREREQ
 
 Head "Installing Java and Maven"
-apt install openjdk-8-jdk -y &>>$LOG && apt install maven -y &>>$LOG
+apt remove openjdk-11-jdk-headless &>>$LOG && apt install openjdk-8-jdk -y &>>$LOG && apt install maven -y &>>$LOG
 stat $?
 
 
