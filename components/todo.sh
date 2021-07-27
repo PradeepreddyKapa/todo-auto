@@ -5,7 +5,7 @@ OS_PREREQ
 
 
 Head "Installing Npm"
-sudo apt install npm -y &>>$LOG
+apt install npm -y &>>$LOG
 stat $?
 
 Head "Downloading COMPONENT"
@@ -20,7 +20,7 @@ sed -i -e "s/REDIS_ENDPOINT/redis.devpracon.tech/" /etc/systemd/system/todo.serv
 stat $?
 
 Head "Buliding the code"
-npm install &>>$LOG && npm run build &>>$LOG
+npm install &>>$LOG
 stat $?
 
 Head "Starting the service"
